@@ -1,6 +1,5 @@
-## recover user
-## 연속으로 사용하지 않아야 한다
-## todo 옵션을 줘서 실행하게 하자 ( 기본값이 실행하지 않는 것이다 )
+# 복원스크립트
+# Author : Runup. Kim Tae Oh
 
 sudo cat /root/old-server/passwd.mig >> /etc/passwd
 sudo cat /root/old-server/group.mig >> /etc/group

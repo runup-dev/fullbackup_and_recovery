@@ -1,4 +1,5 @@
-## make directory 
+## 풀백업 스크립트
+## author : Runup. Kim Tae Oh
 
 backup_dir=./move
 sudo mkdir -p ${backup_dir}
