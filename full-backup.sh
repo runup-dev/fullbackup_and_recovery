@@ -57,5 +57,5 @@ sudo tar -zcvpf ${backup_dir}/letsencrypt.tar.gz /etc/letsencrypt
 
 mkdir -p ${backup_dir}/database
 rm -rf ${backup_dir}/database/*
-mariabackup --backup --target-dir=${backup_dir}/database/ --user=mariabackup --password=bak@1234
-mariabackup --prepare --target-dir=${backup_dir}/database/
+sudo mariabackup --backup --target-dir=${backup_dir}/database/ --user=mariabackup --password=bak@1234
+sudo mariabackup --prepare --target-dir=${backup_dir}/database/
