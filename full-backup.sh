@@ -48,6 +48,9 @@ sudo tar -zcvpf ${backup_dir}/php.tar.gz /etc/php-fpm.d
 ## let's encrypt 
 sudo tar -zcvpf ${backup_dir}/letsencrypt.tar.gz /etc/letsencrypt
 
+## opcache blacklist
+sudo tar -zcvpf ${backup_dir}/opcache.tar.gz /etc/php.d/opcache-default.blacklist
+
 
 ##########################################
 ## DATABASE FULL BACKUP (mariabackup 필요)
@@ -56,7 +59,6 @@ sudo tar -zcvpf ${backup_dir}/letsencrypt.tar.gz /etc/letsencrypt
 ## 23번 에러 발생시 my.cnf의 [mysqld] 섹션에서 open-files-limit
 ##########################################
 
-mkdir -p ${backup_dir}/database
-rm -rf ${backup_dir}/database/*
-sudo mariabackup --backup --target-dir=${backup_dir}/database/ --user=mariabackup --password=bak@1234
+sudo rm -rf ${backup_dir}/database
 sudo mariabackup --prepare --target-dir=${backup_dir}/database/
+sudo mariabackup --backup --target-dir=${backup_dir}/database/ --user=mariabackup --password=bak@1234

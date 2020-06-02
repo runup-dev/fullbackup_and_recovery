@@ -19,8 +19,7 @@
 - Nginx 환경파일
 - PHP-FPM-POOL
 - 데이터베이스
-
-git 패키지가 기본적으로 설치되어  있어야 합니다 
+- OPCACHE BLACKLIST
 
 1. 원본서버에서 아래 코드를 실행합니다  
 <pre>
@@ -36,6 +35,7 @@ wget https://raw.githubusercontent.com/runup-dev/fullbackup_and_recovery/master/
 mysql -u root -p < create_mariabackup_user.sql
 
 # 풀백업실행
+chmod 700 ./full-backup.sh
 ./full_backup.sh
 
 </code>
@@ -50,12 +50,12 @@ mysql -u root -p < create_mariabackup_user.sql
 sudo yum install MariaDB-backup
 
 # git download
-wget https://raw.githubusercontent.com/runup-dev/fullbackup_and_recovery/master/create_mariabackup_user.sql
 wget https://raw.githubusercontent.com/runup-dev/fullbackup_and_recovery/master/full-backup-recovery.sh
 
 
 # 복원실행
-./full_recovery.sh
+chmod 700 ./full-backup-recovery.sh
+./full-backup-recovery.sh
 </code>
 </pre>
 
