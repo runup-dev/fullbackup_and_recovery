@@ -1,13 +1,5 @@
-# fullbackup_and_recovery
+# mariadb-backup package install 
+sudo yum install MariaDB-backup
 
-다른 스펙으로 데이터 이전시 유용한 전체 백업과 복원 쉘입니다
-원본서버의 데이터베이스와 계정정보를 백업하고 사본서버에서 복원합니다 
-* 서버 : centos
-* DB : mariadb 
-
-사용방법
-
-1. 원본서버
-
-
-2. 사본서버
+# mariabackup user 생성
+mysql -u root -p < create_mariabackup_user.sql
